@@ -1,32 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EstudaFácil</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EstudaFácil</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f4ff;
+  text-align: center;
+  padding: 30px;
+}
+
+.caixa {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 450px;
+  margin: auto;
+}
+
+h1 {
+  color: #4b5bdc;
+}
+
+input, button {
+  padding: 12px;
+  margin: 5px;
+  border-radius: 8px;
+}
+
+button {
+  background: #4b5bdc;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+li {
+  margin: 12px;
+  text-align: left;
+}
+</style>
 </head>
+
 <body>
+<div class="caixa">
   <h1>📚 EstudaFácil</h1>
   <p>Organize suas tarefas escolares!</p>
 
   <input id="tarefa" placeholder="Digite sua tarefa">
-  <button onclick="adicionar()">Adicionar tarefa</button>
+  <button onclick="adicionar()">Adicionar</button>
+
   <ul id="lista"></ul>
+</div>
 
-  <script>
-    function adicionar() {
-      const campo = document.getElementById("tarefa");
+<script>
+function adicionar() {
+  const campo = document.getElementById("tarefa");
 
-      if (campo.value.trim() === "") {
-        alert("Digite uma tarefa!");
-        return;
-      }
+  if (campo.value.trim() === "") {
+    alert("Digite uma tarefa!");
+    return;
+  }
 
-      const item = document.createElement("li");
-      item.textContent = campo.value;
-      document.getElementById("lista").appendChild(item);
-      campo.value = "";
-    }
-  </script>
+  const item = document.createElement("li");
+  item.textContent = campo.value;
+  document.getElementById("lista").appendChild(item);
+
+  campo.value = "";
+}
+</script>
 </body>
 </html>
