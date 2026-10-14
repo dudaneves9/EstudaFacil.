@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EstudaFácil</title>
+</head>
+<body>
+  <h1>📚 EstudaFácil</h1>
+  <p>Organize suas tarefas escolares!</p>
+
+  <input id="tarefa" placeholder="Digite sua tarefa">
+  <button onclick="adicionar()">Adicionar tarefa</button>
+  <ul id="lista"></ul>
+
+  <script>
+    function adicionar() {
+      const campo = document.getElementById("tarefa");
+
+      if (campo.value.trim() === "") {
+        alert("Digite uma tarefa!");
+        return;
+      }
+
+      const item = document.createElement("li");
+      item.textContent = campo.value;
+      document.getElementById("lista").appendChild(item);
+      campo.value = "";
+    }
+  </script>
+</body>
+</html>
